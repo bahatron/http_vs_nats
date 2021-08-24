@@ -1,0 +1,19 @@
+version: "3.5"
+
+services:
+    nats:
+        image: nats
+
+    client:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 3000:3000
+        command: npm run client
+
+    server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: npm run server

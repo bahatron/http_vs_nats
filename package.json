@@ -8,7 +8,8 @@
         "client": "pm2-runtime start process.config.js --only client",
         "server": "pm2-runtime start process.config.js --only server",
         "test:http": "autocannon http://localhost:3000/http -d 30 -c 50",
-        "test:nats": "autocannon http://localhost:3000/nats -d 30 -c 50"
+        "test:nats": "autocannon http://localhost:3000/nats -d 30 -c 50",
+        "test:ping": "autocannon http://localhost:3000/ping -d 30 -c 50"
     },
     "repository": {
         "type": "git",

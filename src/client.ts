@@ -16,6 +16,14 @@ app.get("/http", async (req, res) => {
     }
 });
 
+app.get("/ping", async (req, res) => {
+    try {
+        return res.status(200).json("pong");
+    } catch (err) {
+        res.status(500).json(err.message);
+    }
+});
+
 app.get("/nats", async (req, res) => {
     try {
         return res.status(200).json(await $nats.request("request"));
